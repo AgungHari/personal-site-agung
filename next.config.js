@@ -7,10 +7,10 @@ import WithPWA from "next-pwa";
 
 const withPWA = WithPWA({
   dest: "public",
-  disable: process.env.NODE_ENV === "development",
-  register: true,
+  disable: true, // Menonaktifkan PWA sementara
+  register: false,
   scope: "/",
-  sw: "service-worker.js",
+  //sw: "service-worker.js",
 });
 
 /**
