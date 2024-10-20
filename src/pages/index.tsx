@@ -350,7 +350,7 @@ export default function Home() {
             className="mt-14 h-full w-full xl:mt-0"
           >
             <video
-              src="/assets/eljualan.webm"
+              src="/assets/eljualan2.webm"
               autoPlay
               loop
               muted
