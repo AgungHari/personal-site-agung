@@ -65,7 +65,7 @@ function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
   }, [isDarkMode]);
 
   useEffect(() => {
-    const textArray = ["AgungHar!  ", "github.com/AgungHari  ", "HariVijaya  ", "B300 M-IoT. ", "p info loker!  "];
+    const textArray = ["AgungHar!  " , "agungg.com  " , "github.com/AgungHari  ", "HariVijaya  ", "B300 M-IoT. ", "p info loker!  "];
     const typingTimer = setTimeout(() => {
       const fullText = textArray[loopNum % textArray.length] ?? ""; // Jika undefined, gunakan string kosong
       if (!isDeleting) {

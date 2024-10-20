@@ -1,15 +1,15 @@
 # Personal Portfolio
-This is my personal website, that i build using TypeScript, Next.js, Tailwind CSS. disclaimer im not proud of this project
+Still in development. This is my personal website, that i build using TypeScript, Next.js, Tailwind CSS. disclaimer im not proud of this project.
 
 ## 🛠️ Installation
 Follow the steps below to clone and run this project on your local system:
 
 ```bash
 # Clone the repository
-$ git clone https://github.com/wendoj/portfolio.git
+$ git clone https://github.com/AgungHari/personal-site-agung
 
 # Navigate to the project directory
-$ cd portfolio
+$ cd personal-web
 
 # Remove current origin repository
 $ git remote remove origin
