@@ -1,0 +1,33 @@
+
+/* hero */
+.intro {
+    @apply flex flex-col items-start space-y-4 w-full;
+}
+.pill {
+    @apply transition border border-input bg-background flex items-center text-xs px-2.5 py-1.5 rounded-full hover:-translate-y-1 hover:bg-primary hover:text-primary-foreground duration-300;
+}
+.intro h1 {
+    @apply pt-2 leading-tight;
+}
+
+/* scroll down */
+.scroll {
+    @apply transition duration-300 absolute bottom-6 left-1/2 mb-8 hidden -translate-x-1/2 transform-gpu flex-col items-center text-sm text-slate-400 xl:flex tracking-tight;
+}
+.scroll--hidden {
+    @apply opacity-0 transition duration-300;
+}
+
+/* projects */
+.project-card {
+    @apply p-14 bg-white/[1%] rounded-md;
+}
+
+/* spline canvas */
+#canvas-container
+{
+    @apply bg-background border rounded-3xl h-[515px] xl:w-[690px] xl:min-w-[690px] overflow-hidden;
+
+    /* this fixes the overflow:hidden in Chrome/Opera */
+    -webkit-mask-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAIAAACQd1PeAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAA5JREFUeNpiYGBgAAgwAAAEAAGbA+oJAAAAAElFTkSuQmCC);
+}

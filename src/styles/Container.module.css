@@ -1,0 +1,62 @@
+/* navbar */
+.nav {
+  @apply fixed top-0 z-40 flex w-full flex-row items-center justify-between px-[1rem] py-8 2xl:px-[17rem];
+}
+.nav .desktop-nav {
+  @apply hidden items-center space-x-5 text-center sm:flex;
+}
+
+/* burger menu */
+.burger-button {
+  @apply inline-flex transform items-center justify-center rounded-md p-2 transition-all duration-300 focus:outline-none;
+}
+.burger {
+  @apply relative h-40 w-40 border-0 bg-transparent transition-opacity duration-300;
+}
+.burger svg {
+  @apply top-1/2 left-1/2 translate-x-[200%] -translate-y-[38%] scale-100 transform opacity-100 transition-opacity transition-transform duration-300 duration-300;
+}
+.burger svg[data-hide="true"] {
+  @apply -translate-x-[50%] -translate-y-[50%] scale-0 transform opacity-0;
+}
+
+/* preloader */
+.introduction{
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 99;
+  background-color: hsl(240 27.9% 5.7%);
+
+  svg{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: calc(100% + 300px);
+
+    path{
+      fill: hsl(240 27.9% 5.7%);
+    }
+  }
+
+  p{
+    display: flex;
+    color: white;
+    font-size: 42px;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+
+    span {
+      display: block;
+      width: 10px;
+      height: 10px;
+      background-color: white;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+  }
+}

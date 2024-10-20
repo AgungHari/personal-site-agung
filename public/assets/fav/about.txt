@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Monofett
+- Font Author: Copyright 2010 The Monofett Project Authors (https://github.com/googlefonts/monofett), with Reserved Font Name Monofett.
+- Font Source: https://fonts.gstatic.com/s/monofett/v23/mFTyWbofw6zc9NtnW43SuRwr0VJ7.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))

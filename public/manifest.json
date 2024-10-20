@@ -1,0 +1,26 @@
+{
+    "theme_color": "#7B82FE",
+    "background_color": "#0A0A13",
+    "display": "standalone",
+    "orientation": "portrait",
+    "scope": "/",
+    "start_url": "/",
+    "name": "AgungHari",
+    "short_name": "AgungHari",
+    "description": "Fresh Graduate Computer Engineering Student.",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ],
+    "splash_pages": null
+}
