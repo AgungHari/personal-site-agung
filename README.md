@@ -13,7 +13,7 @@ This project will always be in development, as it is my personal website and wil
 
 
 ```bash
-WendoJ walked so i could run
+WendoJ walked so i could run.
 ```
 
 
