@@ -420,7 +420,7 @@ export default function Home() {
                 target="_blank"
                 className="underline"
               >
-                Next.js, Tailwind, dan TypeScript
+                Next.js, Tailwind, and TypeScript
               </Link>
               . This project is one of my steps in personal development to master modern web technologies.
             </h2>
