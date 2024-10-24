@@ -11,12 +11,9 @@ const config = {
     "plugin:@typescript-eslint/stylistic-type-checked",
   ],
   rules: {
-    // These opinionated rules are enabled in stylistic-type-checked above.
-    // Feel free to reconfigure them to your own preference.
     "@typescript-eslint/array-type": "off",
     "@typescript-eslint/consistent-type-definitions": "off",
-
-    "@typescript-eslint/consistent-type-imports": [
+    "@typescript-eslint/consistent-type-imports": [ 
       "warn",
       {
         prefer: "type-imports",
@@ -31,7 +28,23 @@ const config = {
         checksVoidReturn: { attributes: false },
       },
     ],
+    "@typescript-eslint/no-var-requires": "off",
   },
+  overrides: [
+    {
+      // Override khusus untuk file .js
+      files: ["**/*.js"],
+      rules: {
+        "@typescript-eslint/no-unsafe-call": "off",
+        "@typescript-eslint/no-unsafe-member-access": "off",
+        "@typescript-eslint/no-unsafe-assignment": "off",
+        "@typescript-eslint/no-unsafe-return": "off",
+        "@typescript-eslint/no-unsafe-argument": "off",  // Menonaktifkan aturan yang menyebabkan error
+        "@typescript-eslint/no-var-requires": "off",     // Nonaktifkan untuk file JS
+        "@typescript-eslint/no-unused-vars": "off",      // Nonaktifkan unused-vars untuk JS
+      },
+    },
+  ],
 };
 
 module.exports = config;

@@ -123,6 +123,8 @@ export default function Home() {
   const [current, setCurrent] = useState<number>(0);
   const [count, setCount] = useState<number>(0);
   const [stream, setStream] = useState<MediaStream | null>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
 
   // Fungsi untuk memulai kamera
@@ -130,11 +132,11 @@ export default function Home() {
     try {
       const mediaStream = await navigator.mediaDevices.getUserMedia({ video: true });
       setStream(mediaStream);
-  
-      const video = document.getElementById("video") as HTMLVideoElement;
-      if (video) {
-        video.srcObject = mediaStream;
-        video.classList.remove("hidden"); // Tampilkan video saat kamera aktif
+
+      const videoElement = videoRef.current;
+      if (videoElement) {
+        videoElement.srcObject = mediaStream;
+        videoElement.classList.remove("hidden");
       }
     } catch (error) {
       console.error("Gagal mengakses kamera:", error);
@@ -143,24 +145,51 @@ export default function Home() {
   
   // Fungsi untuk menangkap foto
   const capturePhoto = () => {
-    const video = document.getElementById("video") as HTMLVideoElement;
-    const canvas = document.getElementById("canvas") as HTMLCanvasElement;
-  
-    if (video && canvas) {
-      const context = canvas.getContext("2d");
+    const videoElement = videoRef.current;
+    const canvasElement = canvasRef.current;
+
+    if (videoElement && canvasElement) {
+      const context = canvasElement.getContext("2d");
       if (context) {
         // Sesuaikan ukuran canvas dengan video
-        canvas.width = video.videoWidth;
-        canvas.height = video.videoHeight;
-  
+        canvasElement.width = videoElement.videoWidth;
+        canvasElement.height = videoElement.videoHeight;
+
         // Gambar frame dari video ke dalam canvas
-        context.drawImage(video, 0, 0, canvas.width, canvas.height);
-  
-        // Tampilkan canvas
-        canvas.classList.remove("hidden");
+        context.drawImage(videoElement, 0, 0, canvasElement.width, canvasElement.height);
+
+        // Tampilkan canvas dengan hasil tangkapan gambar
+        canvasElement.classList.remove("hidden");
       }
     }
   };
+
+  const uploadCapturedPhoto = async () => {
+    const canvasElement = canvasRef.current;
+    if (canvasElement) {
+      // Konversi gambar di canvas menjadi Blob (file gambar)
+      canvasElement.toBlob((blob) => {
+        if (blob) {
+          void (async () => {
+            const formData = new FormData();
+            formData.append('file', blob, 'captured-photo.jpg');
+  
+            const response = await fetch('/api/upload', {
+              method: 'POST',
+              body: formData,
+            });
+  
+            if (response.ok) {
+              alert('Suksma!, Now we are officialy a team.');
+            } else {
+              alert('Cek koneksi atau hubungi agung via jerokedaton2@gmail.com');
+            }
+          })();
+        }
+      }, 'image/jpeg');
+    }
+  };
+  
   
   // Hentikan kamera saat komponen di-unmount
   useEffect(() => {
@@ -580,7 +609,7 @@ export default function Home() {
 
             <div className="mt-6 flex flex-col items-center">
               {/* Video yang hanya muncul setelah start camera */}
-              <video id="video" autoPlay playsInline className="hidden rounded-md border border-gray-200 shadow-md"></video>
+              <video ref={videoRef} autoPlay playsInline className="hidden rounded-md border border-gray-200 shadow-md"></video>
 
               {/* Tombol untuk memulai kamera */}
               <Button onClick={startCamera} className="mt-6">
@@ -589,11 +618,16 @@ export default function Home() {
 
               {/* Tombol untuk menangkap gambar yang tetap tampil */}
               <Button onClick={capturePhoto} className="mt-6">
-                Now we are officially a team!
+                Capture Photo
               </Button>
 
               {/* Tempat untuk menampilkan hasil foto */}
-              <canvas id="canvas" className="hidden mt-6"></canvas>
+              <canvas ref={canvasRef} className="hidden mt-6"></canvas>
+
+              {/* Tombol untuk mengunggah foto */}
+              <Button onClick={uploadCapturedPhoto} className="mt-6">
+                Upload Captured Photo
+              </Button>
             </div>
           </div>
         </section>
