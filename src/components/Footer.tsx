@@ -55,7 +55,7 @@ export default function Footer() {
           </Button>
         </Link>
       </div>
-      <div className="h-1 bg-[radial-gradient(closest-side,#8486ff,#42357d,#5d83ff,transparent)] opacity-50" />
+      <div className="h-1 bg-[radial-gradient(closest-side,#fffc84,#7d8a42,#ffb75d,transparent)] opacity-50" />
     </footer>
   );
 }
