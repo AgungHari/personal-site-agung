@@ -6,36 +6,37 @@
 
 @layer base {
   :root {
-    --background: 240 27.9% 5.7%;
-    --foreground: 210 40% 98%;
+    --background: 210 20% 10%; /* Charcoal grey yang hangat */
+    --foreground: 0 0% 95%; /* Putih abu-abu terang untuk teks utama */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 210 25% 18%; /* Abu-abu hangat untuk kartu */
+    --card-foreground: 0 0% 98%; /* Teks terang untuk kontras */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 210 25% 18%; /* Sama dengan kartu */
+    --popover-foreground: 0 0% 98%; /* Konsisten dengan foreground */
 
-    --primary: 237 99% 74%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 40 90% 55%; /* Oranye muted untuk sentuhan santai namun cerah */
+    --primary-foreground: 0 0% 10%; /* Teks gelap untuk kontras di elemen primer */
 
-    --secondary: 214.2 98.47% 74.31%;
-    --secondary-foreground: 218 11% 65%;
+    --secondary: 160 50% 40%; /* Hijau lembut untuk elemen sekunder */
+    --secondary-foreground: 0 0% 90%; /* Kontras ringan untuk aksen hijau */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 220 10% 30%; /* Abu-abu medium untuk teks sekunder */
+    --muted-foreground: 0 0% 75%; /* Abu-abu terang untuk kontras lembut */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 27 90% 65%; /* Aksen oranye yang lebih cerah */
+    --accent-foreground: 0 0% 10%; /* Teks gelap pada elemen aksen */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 55% 40%; /* Merah yang tidak terlalu terang untuk peringatan */
+    --destructive-foreground: 0 0% 95%; /* Teks terang untuk peringatan */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 220 10% 22%; /* Abu-abu lembut untuk border */
+    --input: 220 10% 22%; /* Latar abu-abu untuk input */
+    --ring: 210 15% 35%; /* Lingkaran fokus yang ringan namun menonjol */
 
     --radius: 0.5rem;
   }
+
 
   html.light {
     --background: 0 0% 100%; /* Warna putih terang untuk latar belakang */

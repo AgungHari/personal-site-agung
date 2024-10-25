@@ -75,7 +75,12 @@ export default function Preloader() {
     >
       {dimension.width > 0 && (
         <>
-          <motion.p variants={opacity} initial="initial" animate="enter">
+          <motion.p
+            variants={opacity}
+            initial="initial"
+            animate="enter"
+            className={index === words.length - 1 ? `${styles.introduction} ${styles.gradientText}` : styles.introduction}
+          >
             <span></span>
             {words[index]}
           </motion.p>

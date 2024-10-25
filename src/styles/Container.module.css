@@ -29,7 +29,7 @@
   justify-content: center;
   position: fixed;
   z-index: 99;
-  background-color: hsl(240 27.9% 5.7%);
+  background-color: hsl(210 20% 10%);
 
   svg{
     position: absolute;
@@ -38,7 +38,7 @@
     height: calc(100% + 300px);
 
     path{
-      fill: hsl(240 27.9% 5.7%);
+      fill: hsl(210 20% 10%);
     }
   }
 
