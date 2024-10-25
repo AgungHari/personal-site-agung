@@ -197,19 +197,19 @@ export default function Container(props: ContainerProps) {
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
-          content={`https://www.gunghari.com${router.asPath}`}
+          content={`https://www.agungg.com${router.asPath}`}
         />
         <link
           rel="canonical"
-          href={`https://www.gunghari.com${router.asPath}`}
+          href={`https://www.agungg.com${router.asPath}`}
         />
         <meta property="og:type" content={meta.type} />
-        <meta property="og:site_name" content="AgungHari" />
+        <meta property="og:site_name" content="I Gusti Ngurah Agung Hari Vijaya Kusuma" />
         <meta property="og:description" content={meta.description} />
         <meta property="og:title" content={meta.title} />
         <meta property="og:image" content={meta.image} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="AgungHari" />
+        <meta name="twitter:site" content="I Gusti Ngurah Agung Hari Vijaya Kusuma" />
         <meta name="twitter:title" content={meta.title} />
         <meta name="twitter:description" content={meta.description} />
         <meta name="twitter:image" content={meta.image} />

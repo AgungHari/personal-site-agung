@@ -182,7 +182,7 @@ export default function Home() {
             if (response.ok) {
               alert('Suksma!, Now we are officialy a team.');
             } else {
-              alert('Cek koneksi atau hubungi agung via jerokedaton2@gmail.com');
+              alert('Cek koneksi atau hubungi agung via tyang@agungg.com');
             }
           })();
         }
@@ -590,7 +590,7 @@ export default function Home() {
               I&apos;m currently available for work and open to
               discussing new projects.
             </p>
-            <Link href="mailto:jerokedaton2@gmail.com" passHref>
+            <Link href="mailto:tyang@agungg.com" passHref>
               <Button className="mt-6">Get in touch</Button>
             </Link>
           </div>
