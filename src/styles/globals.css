@@ -39,7 +39,7 @@
 
 
   html.light {
-    --background: 0 0% 100%; /* Warna putih terang untuk latar belakang */
+    --background: 210 15% 97%; /* Warna putih terang untuk latar belakang */
     --foreground: 0 0% 10%; /* Hitam lembut untuk teks */
   
     --card: 0 0% 98%; /* Putih hampir penuh untuk kartu */
