@@ -598,7 +598,11 @@ export default function Home() {
 
         {/* Section BeMyDataset */}
         <section id="bemydataset" data-scroll-section className="my-64">
-          <div className="flex flex-col items-center justify-center px-8 py-16 text-center xl:py-24">
+          <div
+            data-scroll
+            data-scroll-speed=".4"
+            data-scroll-position="top"
+            className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24">
             <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
               Be My {" "}
               <span className="text-gradient clash-grotesk">Dataset.</span>
@@ -634,7 +638,11 @@ export default function Home() {
 
         {/* Section TryMyModel */}
         <section id="trymymodel" data-scroll-section className="my-64">
-          <div className="flex flex-col items-center justify-center px-8 py-16 text-center xl:py-24">
+          <div 
+            data-scroll
+            data-scroll-speed=".4"
+            data-scroll-position="top"
+            className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24">
             <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
               Try My {" "}
               <span className="text-gradient clash-grotesk">Model.</span>
