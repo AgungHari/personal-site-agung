@@ -51,7 +51,7 @@ export default function Footer() {
         >
           <Button variant={"outline"}>
             <MailIcon className="h-4 w-4 md:mr-2" />
-            <span className="hidden md:flex">jerokedaton2@gmail.com</span>
+            <span className="hidden md:flex">tyang@agungg.com</span>
           </Button>
         </Link>
       </div>
