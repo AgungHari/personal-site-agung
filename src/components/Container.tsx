@@ -193,7 +193,7 @@ export default function Container(props: ContainerProps) {
       <Head>
         <title>{meta.title}</title>
         <meta name="robots" content="follow, index" />
-        <meta name="theme-color" content="#7B82FE" />
+        <meta name="theme-color" content="#0D1E26" />
         <meta content={meta.description} name="description" />
         <meta
           property="og:url"
