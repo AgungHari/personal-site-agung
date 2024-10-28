@@ -7,6 +7,7 @@
 ![Firebase](https://img.shields.io/badge/Firebase-11.0-orange?style=flat-square&logo=firebase)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-10.18.0-red?style=flat-square&logo=framer)
 
+![tap](https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif)
 
 This project will always be in development, as it is my personal website and will evolve along with my life journey. This project is built using TypeScript, Next.js, and Tailwind CSS, and utilizes modern technologies such as Framer Motion and Firebase to provide a dynamic and interactive user experience. (Disclaimer: I am new to modern web programming.)
 ## Acknowledgements
