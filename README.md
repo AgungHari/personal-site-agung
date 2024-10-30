@@ -1,6 +1,6 @@
 [![universal-personal-banner1](file00.png)](https://www.agungg.com/)
 
-# Personal site agung
+# Personal site agung.
 
 ![Next.js](https://img.shields.io/badge/Next.js-14.0.4-blue?style=flat-square&logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5.1.6-blue?style=flat-square&logo=typescript)
