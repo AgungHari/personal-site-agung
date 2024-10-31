@@ -1,4 +1,4 @@
-[![universal-personal-banner1](file00.png)](https://www.agungg.com/)
+[![banner6](banner6.png)](https://www.agungg.com/)
 
 # Personal site agung.
 
