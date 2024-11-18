@@ -7,7 +7,9 @@ import Footer from "@/components/Footer";
 import { useRouter } from "next/router";
 import Preloader from "@/components/Preloader";
 import styles from "@/styles/Container.module.css";
-import { SunIcon, MoonIcon } from "lucide-react"; // Atau gunakan icon library lain
+import { SunIcon, MoonIcon, BrainCircuit, BookA, Linkedin} from "lucide-react";
+import { Home, Info, Users, Mail, Database, Code, GitHub} from "react-feather";
+
 
 type IconProps = {
   ["data-hide"]: boolean;
@@ -38,13 +40,16 @@ const variants = {
 };
 
 const navLinks = [
-  { href: "#home", text: "Home" },
-  { href: "#about", text: "About" },
-  { href: "#projects", text: "Projects" },
-  { href: "#mentors", text: "Mentors" },
-  { href: "#contact", text : "contact"},
-  { href: "#bemydataset", text : "bemydataset"},
-  { href: "#trymymodel", text: "trymymodel"}
+  { href: "#home", text: "Home", icon: <Home className="w-4 h-4" /> },
+  { href: "#about",  text: "About", icon: <Info className="w-4 h-4" /> },
+  { href: "#projects",  text: "Projects", icon: <Code className="w-4 h-4" /> },
+  { href: "#mentors",  text: "Mentors", icon: <Users className="w-4 h-4" /> },
+  { href: "#contact",  text: "Contact", icon: <Mail className="w-4 h-4" /> },
+  { href: "#bemydataset",  text: "Be My Dataset", icon: <Database className="w-4 h-4" /> },
+  { href: "#trymymodel",  text: "Try My Model", icon: <BrainCircuit className="w-4 h-4" /> },
+  { href: "#ytta",  text: "Ilmu Mahal", icon: <BookA className="w-4 h-4" /> },
+  { href: "https://www.linkedin.com/in/i-gusti-ngurah-agung-hari-vijaya-kusuma", text : "Visit My LinkedIn", icon : <Linkedin className="w-4 h-4"/>},
+  { href: "https://github.com/AgungHari", text : "Visit My Github", icon : <GitHub className="w-4 h-4"/>},
 ];
 
 function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
@@ -65,17 +70,17 @@ function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
   }, [isDarkMode]);
 
   useEffect(() => {
-    const textArray = ["AgungHar!  " , "agungg.com  " , "github.com/AgungHari  ", "HariVijaya  ", "B300 M-IoT. ", "p info loker!  "];
+    const textArray = ["AgungHar!  " , "agungg.com  " , "github.com/AgungHari  ", "HariVijaya  ", "B300 M-IoT. ", "where ARe You now?  "];
     const typingTimer = setTimeout(() => {
       const fullText = textArray[loopNum % textArray.length] ?? ""; // Jika undefined, gunakan string kosong
       if (!isDeleting) {
         setCurrentText(fullText.substring(0, index + 1));
         setIndex(index + 1);
-        setTypingSpeed(150); // typing speed
+        setTypingSpeed(110); // typing speed
       } else {
         setCurrentText(fullText.substring(0, index - 1));
         setIndex(index - 1);
-        setTypingSpeed(100); // deleting speed
+        setTypingSpeed(90); // deleting speed
       }
 
       if (!isDeleting && currentText === fullText) {
@@ -94,7 +99,7 @@ function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
 
   return (
     <motion.div
-      className="text-lg font-semibold typing-effect"
+      className="text-base font-medium typing-effect"
       initial={{ opacity: 0, scale: 0.8 }}
       animate={{ opacity: 1, scale: 1 }}
     >
@@ -114,26 +119,39 @@ function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
   }
 }
 
-function NavItem(props: NavProps) {
+function NavItem(props: NavProps & { icon: JSX.Element; isMobile?: boolean }) {
   return (
     <motion.li
-      className={props.className}
+      className={`${props.className} ${props.isMobile ? "flex items-center space-x-4" : "relative group"}`}
       variants={variants}
       custom={props.i}
-      initial="hidden"
-      animate="visible"
-      exit="hidden"
+      initial="visible"
+      whileHover={{
+        y: 5, // Bergerak ke atas sejauh 10px
+      }}
+      transition={{
+        type: "spring", // Transisi spring untuk kesan elastis
+        stiffness: 300,
+        damping: 15,
+      }}
     >
       <a
         href={props.href}
         onClick={handleClick}
-        className={cn(props.i === 0 && "nav-active", "nav-link")}
+        className={`nav-link flex ${props.isMobile ? "items-center" : "justify-center"}`}
       >
-        {props.text}
+        {props.icon}
+        {props.isMobile && <span className="text-base font-medium ml-2">{props.text}</span>}
       </a>
+      {!props.isMobile && (
+        <span className="absolute bottom-full left-1/2 mb-2 -translate-x-1/2 hidden w-max rounded bg-gray-800 px-2 py-1 text-xs text-yellow-300 opacity-0 group-hover:block group-hover:opacity-90">
+          {props.text}
+        </span>
+      )}
     </motion.li>
   );
 }
+
 
 export default function Container(props: ContainerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -241,12 +259,12 @@ export default function Container(props: ContainerProps) {
         </div>
         <Link href="/">
           <motion.div
-            className="text-lg font-semibold hover-effect"
+            className="text-lg font-semibold hover-effect w-[0px] whitespace-nowrap"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{
               scale: 1.2,
-              rotate: 15,
+              rotate: 0,
               // Hanya efek transformasi tanpa menyentuh warna
             }}
             transition={{
@@ -266,24 +284,26 @@ export default function Container(props: ContainerProps) {
               key={link.href}
               href={link.href}
               text={link.text}
+              icon={link.icon}
               i={i}
               className="text-base"
+              isMobile={false} // Desktop menu
             />
           ))}
-                  {/* Tombol toggle dark mode */}
-          <button
-            onClick={toggleTheme}
-            className="p-2 bg-gray-200 rounded-full dark:bg-gray-700 transition-colors"
-          >
-            {isDarkMode ? <SunIcon className="h-6 w-6 text-yellow-400" /> : <MoonIcon className="h-6 w-6 text-gray-800" />}
-          </button>
         </ul>
+        {/* Tombol toggle dark mode */} 
+        <button
+            onClick={toggleTheme}
+            className="hidden p-1 bg-gray-200 rounded-full dark:bg-gray-700 transition-colors sm:flex"
+          >
+            {isDarkMode ? <MoonIcon className="h-5 w-5 text-yellow-400 " /> : <SunIcon className="h-5 w-5 text-gray-800 " /> }
+        </button>
 
         {/* Mobile menu */}
         <AnimatePresence key="menu">
           {isOpen && (
             <motion.div
-              className="fixed right-0 top-0 z-40 flex h-screen w-full flex-col justify-start overflow-y-hidden bg-background"
+              className="fixed right-0 top-0 z-40 flex h-screen w-full flex-col justify-start overflow-y-hidden bg-background/95"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -291,7 +311,15 @@ export default function Container(props: ContainerProps) {
             >
               {/* Expandable menu */}
               <div className="flex h-20 max-h-20 min-h-[60px] w-full items-center justify-between border-b pl-[22px] pr-1">
-                <span className="text-base font-medium lowercase">Menu</span>
+                <span className="text-base font-medium w-[0px]">Menu</span>
+                <div className="flex pr-[30px]">
+                  <button
+                    onClick={toggleTheme}
+                    className="p-1 bg-gray-200 rounded-full dark:bg-gray-700 transition-colors"
+                  >
+                    {isDarkMode ? <MoonIcon className="h-4 w-4 text-yellow-400" /> : <SunIcon className="h-4 w-4 text-gray-800" />}
+                  </button>
+                  </div>
                 <button
                   onClick={() => setIsOpen(!isOpen)}
                   className={styles.burger}
@@ -310,18 +338,14 @@ export default function Container(props: ContainerProps) {
                       <NavItem
                         href={link.href}
                         text={link.text}
+                        icon={link.icon}
                         i={i}
                         className="text-xl"
+                        isMobile={true} // Mobile menu
                       />
                     </button>
                   ))}
                 </ul>
-                <button
-                  onClick={toggleTheme}
-                  className="p-2 bg-gray-200 rounded-full dark:bg-gray-700 transition-colors"
-                >
-                  {isDarkMode ? <SunIcon className="h-6 w-6 text-yellow-400" /> : <MoonIcon className="h-6 w-6 text-gray-800" />}
-                </button>
                 {/* Footer */}
                 <div className="flex min-h-fit w-full flex-col space-y-8 px-[22px] py-10">
                   <span className="text-sm text-muted-foreground">
@@ -359,7 +383,7 @@ function MenuIcon(props: IconProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute h-5 w-5 text-blue-300"
+      className="absolute h-5 w-5 text-neutral-200"
       width="20"
       height="20"
       viewBox="0 0 20 20"
