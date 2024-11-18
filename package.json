@@ -58,7 +58,7 @@
     "eslint": "^8.54.0",
     "eslint-config-next": "^14.0.4",
     "gh-pages": "^6.2.0",
-    "postcss": "^8.4.31",
+    "postcss": "^8.4.49",
     "prettier": "^3.1.0",
     "prettier-plugin-tailwindcss": "^0.5.7",
     "tailwindcss": "^3.3.5",
