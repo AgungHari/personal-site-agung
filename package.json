@@ -21,7 +21,7 @@
     "@t3-oss/env-nextjs": "^0.7.1",
     "@tensorflow/tfjs": "^4.21.0",
     "busboy": "^1.6.0",
-    "class-variance-authority": "^0.7.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.0",
     "embla-carousel-react": "8.0.0-rc21",
     "firebase": "^11.0.2",
