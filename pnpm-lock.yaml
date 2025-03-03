@@ -25,7 +25,7 @@ dependencies:
     version: 1.9.48
   '@t3-oss/env-nextjs':
     specifier: ^0.7.1
-    version: 0.7.3(typescript@5.6.3)(zod@3.24.1)
+    version: 0.7.3(typescript@5.6.3)(zod@3.24.2)
   '@tensorflow/tfjs':
     specifier: ^4.21.0
     version: 4.22.0(seedrandom@3.0.5)
@@ -96,8 +96,8 @@ dependencies:
     specifier: ^1.8.1
     version: 1.8.1
   zod:
-    specifier: ^3.24.1
-    version: 3.24.1
+    specifier: ^3.24.2
+    version: 3.24.2
 
 devDependencies:
   '@types/eslint':
@@ -2480,20 +2480,6 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@radix-ui/react-slot@1.1.1(@types/react@18.3.13)(react@18.2.0):
-    resolution: {integrity: sha512-RApLLOcINYJA+dMVbOju7MYv1Mb2EBp2nH4HdDzXTSyaR5optlm6Otrz1euW3HbdOR8UmmFK06TD+A9frYWv+g==}
-    peerDependencies:
-      '@types/react': '*'
-      react: ^16.8 || ^17.0 || ^18.0 || ^19.0 || ^19.0.0-rc
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-    dependencies:
-      '@radix-ui/react-compose-refs': 1.1.1(@types/react@18.3.13)(react@18.2.0)
-      '@types/react': 18.3.13
-      react: 18.2.0
-    dev: false
-
   /@radix-ui/react-slot@1.1.2(@types/react@18.3.13)(react@18.2.0):
     resolution: {integrity: sha512-YAKxaiGsSQJ38VzKH86/BPRC4rh+b1Jpa+JneA5LRE7skmLPNAyeG8kPJj/oo4STLvlrs8vkf/iYyc3A5stYCQ==}
     peerDependencies:
@@ -2705,7 +2691,7 @@ packages:
       tslib: 2.8.1
     dev: false
 
-  /@t3-oss/env-core@0.7.3(typescript@5.6.3)(zod@3.24.1):
+  /@t3-oss/env-core@0.7.3(typescript@5.6.3)(zod@3.24.2):
     resolution: {integrity: sha512-hhtj59TKC6TKVdwJ0CcbKsvkr9R8Pc/SNKd4IgGUIC9T9X6moB8EZZ3FTJdABA/h9UABCK4J+KsF8gzmvMvHPg==}
     peerDependencies:
       typescript: '>=4.7.2'
@@ -2715,10 +2701,10 @@ packages:
         optional: true
     dependencies:
       typescript: 5.6.3
-      zod: 3.24.1
+      zod: 3.24.2
     dev: false
 
-  /@t3-oss/env-nextjs@0.7.3(typescript@5.6.3)(zod@3.24.1):
+  /@t3-oss/env-nextjs@0.7.3(typescript@5.6.3)(zod@3.24.2):
     resolution: {integrity: sha512-90TNffS17vjkQwfYyMUb4Zw9yqHwFV40f78qFug4JiQa5+N6DydTdlLOpzOcj8Cna/qpAVDwMSypofF/TVQDuA==}
     peerDependencies:
       typescript: '>=4.7.2'
@@ -2727,9 +2713,9 @@ packages:
       typescript:
         optional: true
     dependencies:
-      '@t3-oss/env-core': 0.7.3(typescript@5.6.3)(zod@3.24.1)
+      '@t3-oss/env-core': 0.7.3(typescript@5.6.3)(zod@3.24.2)
       typescript: 5.6.3
-      zod: 3.24.1
+      zod: 3.24.2
     dev: false
 
   /@tensorflow/tfjs-backend-cpu@4.22.0(@tensorflow/tfjs-core@4.22.0):
@@ -7237,6 +7223,6 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zod@3.24.1:
-    resolution: {integrity: sha512-muH7gBL9sI1nciMZV67X5fTKKBLtwpZ5VBp1vsOQzj1MhrBZ4wlVCm3gedKZWLp0Oyel8sIGfeiz54Su+OVT+A==}
+  /zod@3.24.2:
+    resolution: {integrity: sha512-lY7CDW43ECgW9u1TcT3IoXHflywfVqDYze4waEz812jR/bZ8FHDsl7pFQoSZTz5N+2NqRXs8GBwnAwo3ZNxqhQ==}
     dev: false
