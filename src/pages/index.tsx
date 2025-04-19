@@ -111,7 +111,7 @@ const services = [
   {
     service: "ChatGPT",
     description:
-      "ChatGPT, it seems I don’t need to explain at length. If you have money and had nothing to do with it, I will always recommend buying ChatGPT. Its ability to analyze code is undeniable! Even the website you are currently see was built with GPT.",
+      "ChatGPT, it seems I dont need to explain at length. If you have money and had nothing to do with it, I will always recommend buying ChatGPT. Its ability to analyze code is undeniable! Even the website you are currently see was built with GPT.",
     image: "/assets/chatgpt.jpg",
   },
 ];
@@ -125,7 +125,6 @@ export default function Home() {
   const [stream, setStream] = useState<MediaStream | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
-
 
   // Fungsi untuk memulai kamera
   const startCamera = async () => {
@@ -239,6 +238,18 @@ export default function Home() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const scrollTarget = sessionStorage.getItem("scrollTarget");
+    if (scrollTarget) {
+      const section = document.getElementById(scrollTarget);
+      if (section) {
+        scrollTo(section);
+        sessionStorage.removeItem("scrollTarget");
+      }
+    }
+  }, []);
+  
 
   useEffect(() => {
     if (!carouselApi) return;
@@ -383,6 +394,7 @@ export default function Home() {
               autoPlay
               loop
               muted
+              playsInline
               className="w-full h-full rounded-lg"
             />
 
@@ -484,6 +496,7 @@ export default function Home() {
                                 autoPlay
                                 loop
                                 muted
+                                playsInline
                                 className="aspect-video h-full w-full rounded-t-md bg-primary object-cover"
                               />
                             ) : (
@@ -590,7 +603,7 @@ export default function Home() {
               I&apos;m currently available for work and open to
               discussing new projects.
             </p>
-            <Link href="mailto:tyang@agungg.com" passHref>
+            <Link href="mailto:gungwahari2@gmail.com" passHref>
               <Button className="mt-6">Get in touch</Button>
             </Link>
           </div>
@@ -612,15 +625,14 @@ export default function Home() {
             </p>
 
             <div className="mt-6 flex flex-col items-center">
-              {/* Video yang hanya muncul setelah start camera */}
               <video ref={videoRef} autoPlay playsInline className="hidden rounded-md border border-gray-200 shadow-md"></video>
 
-              {/* Tombol untuk memulai kamera */}
+              {/* start kamera */}
               <Button onClick={startCamera} className="mt-6">
                 Start Camera
               </Button>
 
-              {/* Tombol untuk menangkap gambar yang tetap tampil */}
+              {/* ambil foto mantap */}
               <Button onClick={capturePhoto} className="mt-6">
                 Capture Photo
               </Button>
@@ -628,7 +640,7 @@ export default function Home() {
               {/* Tempat untuk menampilkan hasil foto */}
               <canvas ref={canvasRef} className="hidden mt-6"></canvas>
 
-              {/* Tombol untuk mengunggah foto */}
+              {/* finis */}
               <Button onClick={uploadCapturedPhoto} className="mt-6">
                 Upload Captured Photo
               </Button>
@@ -695,8 +707,8 @@ function Gradient() {
               y2="474.645"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#FFD700" /> {/* Kuning */}
-              <stop offset={1} stopColor="#ADFF2F" /> {/* Hijau Kekuningan */}
+              <stop stopColor="#FFD700" /> 
+              <stop offset={1} stopColor="#ADFF2F" /> 
             </linearGradient>
           </defs>
         </svg>

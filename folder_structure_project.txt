@@ -1,0 +1,39 @@
+personal-web
+|-- .next/
+|-- lib/
+|   |-- firebase.ts
+|-- node_modules/
+|-- public/
+|-- src/
+|   |-- components/
+|       |-- ui/
+|       |-- Container.tsx
+|       |-- Footer.tsx
+|       |-- Preloader.tsx
+|   |-- lib/
+|       |-- utils.ts
+|   |-- pages/
+|       |-- api/
+|           |-- upload.js
+|       |-- _app.tsx
+|       |-- index.tsx
+|   |-- styles
+|       |-- clash-grotesk
+|       |-- Container.module.css
+|       |-- globals.css
+|       |-- Home.module.css
+|       |-- locomotive-scroll.css
+|   |-- env.js
+|-- .env.example
+|-- .eslintrc.cjs
+|-- .gitignore
+|-- components.json
+|-- LICENSE.md
+|-- next.config.js
+|-- package-lock.json
+|-- pnpm-lock.yaml
+|-- postcss.config.cjs
+|-- postcss.config.js
+|-- README.md
+|-- tailwind.config.ts
+|-- tsconfig.json

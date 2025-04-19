@@ -47,7 +47,13 @@ const navLinks = [
   { href: "#contact",  text: "Contact", icon: <Mail className="w-4 h-4" /> },
   { href: "#bemydataset",  text: "Be My Dataset", icon: <Database className="w-4 h-4" /> },
   { href: "#trymymodel",  text: "Try My Model", icon: <BrainCircuit className="w-4 h-4" /> },
-  { href: "#ytta",  text: "Ilmu Mahal", icon: <BookA className="w-4 h-4" /> },
+  { href: "/ilmu-mahal", text: "Blog (Update!)",
+    icon: (
+      <div className="relative w-4 h-4">
+        <BookA className="w-4 h-4" />
+        <span className="absolute bottom-0 left-0 block h-1.5 w-1.5 rounded-full bg-red-500 border border-background animate-blink" />
+      </div> ),
+  },  
   { href: "https://www.linkedin.com/in/i-gusti-ngurah-agung-hari-vijaya-kusuma", text : "Visit My LinkedIn", icon : <Linkedin className="w-4 h-4"/>},
   { href: "https://github.com/AgungHari", text : "Visit My Github", icon : <GitHub className="w-4 h-4"/>},
 ];
@@ -59,8 +65,6 @@ function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
   
-
-  // Reset typing effect on theme change
   useEffect(() => {
     setCurrentText("");
     setIndex(0);
@@ -70,13 +74,13 @@ function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
   }, [isDarkMode]);
 
   useEffect(() => {
-    const textArray = ["AgungHar!  " , "agungg.com  " , "github.com/AgungHari  ", "HariVijaya  ", "B300 M-IoT. ", "where ARe You now?  "];
+    const textArray = ["AgungHar!  " , "agungg.com  " , "github.com/AgungHari  ", "HariVijaya  ", "B300 M-IoT. ", "Info  "];
     const typingTimer = setTimeout(() => {
-      const fullText = textArray[loopNum % textArray.length] ?? ""; // Jika undefined, gunakan string kosong
+      const fullText = textArray[loopNum % textArray.length] ?? ""; 
       if (!isDeleting) {
         setCurrentText(fullText.substring(0, index + 1));
         setIndex(index + 1);
-        setTypingSpeed(110); // typing speed
+        setTypingSpeed(110); //typing speed
       } else {
         setCurrentText(fullText.substring(0, index - 1));
         setIndex(index - 1);
@@ -112,10 +116,20 @@ function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
 function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
   const href = e.currentTarget.getAttribute("href");
 
-  if (href && href.startsWith("#")) {
+  if (!href) return;
+
+  if (href.startsWith("#")) {
     e.preventDefault();
+
+    if (window.location.pathname !== "/") {
+      window.location.href = `/${href}`;
+      return;
+    }
+
     const section = document.querySelector(href);
-    scrollTo(section);
+    if (section) {
+      scrollTo(section);
+    }
   }
 }
 
@@ -127,7 +141,7 @@ function NavItem(props: NavProps & { icon: JSX.Element; isMobile?: boolean }) {
       custom={props.i}
       initial="visible"
       whileHover={{
-        y: 5, // Bergerak ke atas sejauh 10px
+        y: 5, 
       }}
       transition={{
         type: "spring", // Transisi spring untuk kesan elastis
@@ -156,10 +170,9 @@ function NavItem(props: NavProps & { icon: JSX.Element; isMobile?: boolean }) {
 export default function Container(props: ContainerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [isDarkMode, setIsDarkMode] = useState(true); // State untuk dark mode
-
   const { children, ...customMeta } = props;
+  const [hasMounted, setHasMounted] = useState(false);
   const router = useRouter();
   const meta = {
     title: "AgungHar!",
@@ -184,12 +197,29 @@ export default function Container(props: ContainerProps) {
 
   // preloader effect
   useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
+    if (router.pathname === "/") {
+      setTimeout(() => {
+        setHasMounted(true);
+        document.body.style.cursor = "default";
+        window.scrollTo(0, 0);
+      }, 2000); // tetap pakai delay 2 detik
+    } else {
+      setHasMounted(true);
+    }
+  }, [router.pathname]);
+
+  const isFirstLoadHomepage = router.pathname === "/" && !hasMounted;
+
+  useEffect(() => {
+    const resetCursor = () => {
       document.body.style.cursor = "default";
-      window.scrollTo(0, 0);
-    }, 2000);
-  }, []);
+    };
+
+    router.events.on("routeChangeComplete", resetCursor);
+    return () => {
+      router.events.off("routeChangeComplete", resetCursor);
+    };
+  }, [router]);
 
   // Handle dark mode toggle
   useEffect(() => {
@@ -265,7 +295,6 @@ export default function Container(props: ContainerProps) {
             whileHover={{
               scale: 1.2,
               rotate: 0,
-              // Hanya efek transformasi tanpa menyentuh warna
             }}
             transition={{
               type: "spring",
@@ -369,7 +398,7 @@ export default function Container(props: ContainerProps) {
       </nav>
       {/* Preloader */}
       <AnimatePresence mode="wait">
-        {isLoading && <Preloader />}
+      {isFirstLoadHomepage && <Preloader />}
       </AnimatePresence>
 
       {/* Main content */}

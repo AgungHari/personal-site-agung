@@ -28,7 +28,7 @@ export default function Footer() {
       <div className="container mx-auto flex flex-row items-center justify-between py-6">
         <span className="flex flex-row items-center space-x-4">
           <p className="text-xs text-muted-foreground">
-            Ver 0.8.3 by{" "}
+            Ver 0.9.0 by{" "}
             <Link
               href="https://github.com/AgungHari"
               target="_blank"
@@ -45,13 +45,13 @@ export default function Footer() {
           </span>
         </span>
         <Link
-          href="mailto:tyang@agungg.com"
+          href="mailto:gungwahari2@gmail.com"
           passHref
           className="text-xs text-muted-foreground hover:text-foreground"
         >
           <Button variant={"outline"}>
             <MailIcon className="h-4 w-4 md:mr-2" />
-            <span className="hidden md:flex">tyang@agungg.com</span>
+            <span className="hidden md:flex">gungwahari2@gmail.com or tyang@agungg.com</span>
           </Button>
         </Link>
       </div>
