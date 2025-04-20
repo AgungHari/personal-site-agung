@@ -395,6 +395,7 @@ export default function Home() {
               loop
               muted
               playsInline
+              preload="auto"
               className="w-full h-full rounded-lg"
             />
 
