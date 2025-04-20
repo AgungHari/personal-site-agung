@@ -341,7 +341,7 @@ export default function Home() {
                   Hello, I&apos;m
                   <br />
                 </span>
-                <span className="clash-grotesk text-gradient text-6xl 2xl:text-8xl">
+                <span className="clash-grotesk animate-gradient-slide bg-gradient-to-r from-primary to-secondary bg-clip-text transition-colors duration-3000 text-6xl 2xl:text-8xl">
                   Agung Hari.
                 </span>
               </h1>

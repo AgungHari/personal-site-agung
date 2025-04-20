@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import Preloader from "@/components/Preloader";
 import styles from "@/styles/Container.module.css";
 import { SunIcon, MoonIcon, BrainCircuit, BookA, Linkedin} from "lucide-react";
-import { Home, Info, Users, Mail, Database, Code, GitHub} from "react-feather";
+import { Home, Info, Users, Mail, Database, Code, GitHub, Youtube} from "react-feather";
 
 
 type IconProps = {
@@ -56,6 +56,7 @@ const navLinks = [
   },  
   { href: "https://www.linkedin.com/in/i-gusti-ngurah-agung-hari-vijaya-kusuma", text : "Visit My LinkedIn", icon : <Linkedin className="w-4 h-4"/>},
   { href: "https://github.com/AgungHari", text : "Visit My Github", icon : <GitHub className="w-4 h-4"/>},
+  { href: "https://youtube.com/@igstngragunghari2640?feature=shared", text : "Visit My Youtube", icon : <Youtube className="w-4 h-4"/>},
 ];
 
 function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
