@@ -38,7 +38,7 @@
     "react-dom": "18.2.0",
     "react-feather": "^2.0.10",
     "sharp": "^0.33.5",
-    "tailwind-merge": "^2.5.5",
+    "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "uuid": "^10.0.0",
     "vanilla-tilt": "^1.8.1",
