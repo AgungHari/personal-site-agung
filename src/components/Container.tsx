@@ -59,7 +59,7 @@ const navLinks = [
   { href: "https://youtube.com/@igstngragunghari2640?feature=shared", text : "Visit My Youtube", icon : <Youtube className="w-4 h-4"/>},
 ];
 
-function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
+{/*function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
   const [currentText, setCurrentText] = useState("");
   const [index, setIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -75,27 +75,27 @@ function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
   }, [isDarkMode]);
 
   useEffect(() => {
-    const textArray = ["AgungHar!  " , "agungg.com  " , "github.com/AgungHari  ", "HariVijaya  ", "B300 M-IoT. ", "Info  "];
+    const textArray = ["agunghar!  " , "agungg.com "];
     const typingTimer = setTimeout(() => {
       const fullText = textArray[loopNum % textArray.length] ?? ""; 
       if (!isDeleting) {
         setCurrentText(fullText.substring(0, index + 1));
         setIndex(index + 1);
-        setTypingSpeed(110); //typing speed
+        setTypingSpeed(110); 
       } else {
         setCurrentText(fullText.substring(0, index - 1));
         setIndex(index - 1);
-        setTypingSpeed(90); // deleting speed
+        setTypingSpeed(90); 
       }
 
       if (!isDeleting && currentText === fullText) {
         setIsDeleting(true);
-        setTypingSpeed(1000); // delay before deleting
+        setTypingSpeed(1000); 
       } else if (isDeleting && currentText === "") {
         setIsDeleting(false);
         setLoopNum(loopNum + 1);
         setIndex(0);
-        setTypingSpeed(150); // delay before typing new text
+        setTypingSpeed(150); 
       }
     }, typingSpeed);
 
@@ -112,7 +112,7 @@ function TypingEffect({ isDarkMode }: { isDarkMode: boolean }) {
       <span className="blinking-cursor">|</span>
     </motion.div>
   );
-}
+} alay */}
 
 function handleClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
   const href = e.currentTarget.getAttribute("href");
@@ -145,7 +145,7 @@ function NavItem(props: NavProps & { icon: JSX.Element; isMobile?: boolean }) {
         y: 5, 
       }}
       transition={{
-        type: "spring", // Transisi spring untuk kesan elastis
+        type: "spring", 
         stiffness: 300,
         damping: 15,
       }}
@@ -171,7 +171,7 @@ function NavItem(props: NavProps & { icon: JSX.Element; isMobile?: boolean }) {
 export default function Container(props: ContainerProps) {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [isDarkMode, setIsDarkMode] = useState(true); // State untuk dark mode
+  const [isDarkMode, setIsDarkMode] = useState(true); // State  dark mode
   const { children, ...customMeta } = props;
   const [hasMounted, setHasMounted] = useState(false);
   const router = useRouter();
@@ -203,7 +203,7 @@ export default function Container(props: ContainerProps) {
         setHasMounted(true);
         document.body.style.cursor = "default";
         window.scrollTo(0, 0);
-      }, 2000); // tetap pakai delay 2 detik
+      }, 2000); 
     } else {
       setHasMounted(true);
     }
@@ -304,7 +304,8 @@ export default function Container(props: ContainerProps) {
             }}
             whileTap={{ scale: 0.9 }}
           >
-            <TypingEffect isDarkMode={isDarkMode} />
+            {/*<TypingEffect isDarkMode={isDarkMode} /> alay*/}
+
           </motion.div>
         </Link>
         {/* Desktop menu */}
