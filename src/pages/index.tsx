@@ -718,7 +718,7 @@ export default function Home() {
               <span className="text-gradient clash-grotesk">Agung-R1.</span>
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              Powered by DeepSeek-R1, refined by Agung Hari. Try chatting with my local AI assistant. <br /> This model runs on my personal laptop (Intel Core i5 10th Gen, RTX 2060 Max-Q). <br />Average response time is around 45 seconds to 1 minute depending on your connection and the complexity of the question because Agung-R1 needs time to think. <br /> If the model doesnt respond in 2 minute, it probably means Agung laptop is off or Biznet wifi is acting up. Please try again later!
+              Powered by DeepSeek-R1, refined by Agung Hari. Try chatting with my local AI assistant. <br /> This model runs on my personal laptop (Intel Core i5 10th Gen, RTX 2060 Max-Q). <br />Average response time is around 45 seconds to 1 minute depending on your connection and the complexity of the question because Agung-R1 needs time to think. <br /> If the model doesnt respond in 2 minute, it probably means Agung laptop is off or Biznet wifi is acting up. Please try again later! you now officialy a beta tester for my model.
             </p>
 
             <div className="mt-6 w-full flex justify-center px-4">
