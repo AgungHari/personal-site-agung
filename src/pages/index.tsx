@@ -26,6 +26,11 @@ const aboutStats = [
   { label: "Projects", value: "10+" },
 ];
 
+type AskResponse = {
+  answer: string;
+};
+
+
 const projects = [
   {
     title: "Smart Wheelchair Control Based on Spatial Features of Hand Gesture (CNN)",
@@ -125,6 +130,49 @@ export default function Home() {
   const [stream, setStream] = useState<MediaStream | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [messages, setMessages] = useState<{ question: string; think?: string; answer: string }[]>([]);
+
+  const handleSubmit = async () => {
+    if (!query.trim()) return;
+    setLoading(true);
+  
+    try {
+      const res = await fetch("/api/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query }),
+      });
+  
+      const raw: unknown = await res.json();
+      const data: AskResponse = raw as AskResponse;
+      const responseText: string = data.answer;
+  
+      let think: string | undefined;
+      let answer: string = responseText;
+  
+      if (
+        typeof responseText === "string" &&
+        responseText.includes("<think>") &&
+        responseText.includes("</think>")
+      ) {
+        const start: number = responseText.indexOf("<think>") + "<think>".length;
+        const end: number = responseText.indexOf("</think>");
+        think = responseText.slice(start, end).trim();
+        answer = responseText.slice(end + "</think>".length).trim();
+      }
+  
+      setMessages((prev) => [...prev, { question: query, think, answer }]);
+      setQuery("");
+    } catch (error) {
+      console.error("Gagal mengambil respons:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  
+  
 
   // Fungsi untuk memulai kamera
   const startCamera = async () => {
@@ -188,6 +236,15 @@ export default function Home() {
       }, 'image/jpeg');
     }
   };
+  useEffect(() => {
+    setMessages([
+      {
+        question: "Hi Agung-R1 👋",
+        think: "there is new visitor on Agungg.com. i must behave or Agung Hari will be mad. the visitor must know that agung hari doesnt pay me any money. i was running on his hp-dk1064tx laptop which is sucks.",
+        answer: "Hi Im Agung-R1, freely ask me any question! I need some time to think please wait patiently while I think."
+      }
+    ]);
+  }, []);
   
   
   // Hentikan kamera saat komponen di-unmount
@@ -658,22 +715,49 @@ export default function Home() {
             className="flex flex-col items-center justify-center rounded-lg bg-gradient-to-br from-primary/[6.5%] to-white/5 px-8 py-16 text-center xl:py-24">
             <h2 className="text-4xl font-medium tracking-tighter xl:text-6xl">
               Try My {" "}
-              <span className="text-gradient clash-grotesk">Model.</span>
+              <span className="text-gradient clash-grotesk">Agung-R1.</span>
             </h2>
             <p className="mt-1.5 text-base tracking-tight text-muted-foreground xl:text-lg">
-              This feature is still in development and will be available soon! You can see the progress of my model on GitHub.
+              Powered by DeepSeek-R1, refined by Agung Hari. Try chatting with my local AI assistant. <br /> This model runs on my personal laptop (Intel Core i5 10th Gen, RTX 2060 Max-Q). <br />Average response time is around 45 seconds to 1 minute depending on your connection and the complexity of the question because Agung-R1 needs time to think. <br /> If the model doesnt respond in 2 minute, it probably means Agung laptop is off or Biznet wifi is acting up. Please try again later!
             </p>
 
-            <div className="mt-6 flex flex-col items-center">
-              <Link href="https://github.com/AgungHari" passHref>
-                <Button className="mt-6">
-                  Visit My GitHub
-                </Button>
-              </Link>
-
+            <div className="mt-6 w-full flex justify-center px-4">
               {/* Placeholder for future video or feature */}
-              <div className="mt-6 w-full h-64 bg-gray-200 flex items-center justify-center rounded-md shadow-md">
-                <p className="text-muted-foreground">Coming Soon...</p>
+              <div className="mt-6 w-full max-w-2xl text-left space-y-4">
+                <div className="h-96 overflow-y-auto rounded-md border border-border bg-background p-4 text-sm shadow-inner">
+                  {messages.map((msg, i) => (
+                    <div key={i} className="mb-6">
+                      <p className="font-semibold text-primary">You:</p>
+                      <p className="mb-2 whitespace-pre-wrap">{msg.question}</p>
+
+                      <p className="font-semibold text-secondary">Agung-R1:</p>
+
+                      {/* 💭 Bagian THINK */}
+                      {msg.think && (
+                        <div className="mb-2 rounded-md border-l-4 border-yellow-400 bg-muted/40 p-3 text-sm italic text-muted-foreground">
+                          💭 {msg.think}
+                        </div>
+                      )}
+
+                      {/* ✅ Bagian JAWABAN */}
+                      <p className="whitespace-pre-wrap text-muted-foreground">{msg.answer}</p>
+                    </div>
+                  ))}
+                  {loading && <p className="text-muted-foreground italic">Agung-R1 is thinking...</p>}
+                </div>
+
+                <div className="flex gap-2">
+                  <input
+                    type="text"
+                    placeholder="Ask anything in English or Bahasa indonesia .... "
+                    value={query}
+                    onChange={(e) => setQuery(e.target.value)}
+                    className="w-full rounded-md border border-muted bg-background p-2 text-sm"
+                  />
+                  <Button onClick={handleSubmit} disabled={loading}>
+                    Kirim
+                  </Button>
+                </div>
               </div>
             </div>
           </div>

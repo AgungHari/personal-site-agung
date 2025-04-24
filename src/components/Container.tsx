@@ -46,7 +46,13 @@ const navLinks = [
   { href: "#mentors",  text: "Mentors", icon: <Users className="w-4 h-4" /> },
   { href: "#contact",  text: "Contact", icon: <Mail className="w-4 h-4" /> },
   { href: "#bemydataset",  text: "Be My Dataset", icon: <Database className="w-4 h-4" /> },
-  { href: "#trymymodel",  text: "Try My Model", icon: <BrainCircuit className="w-4 h-4" /> },
+  { href: "#trymymodel",  text: "Agung-R1",
+    icon: (
+      <div className="relative w-4 h-4">
+        <BrainCircuit className="w-4 h-4" />
+        <span className="absolute bottom-0 left-0 block h-1.5 w-1.5 rounded-full bg-red-500 border border-background animate-blink" />
+      </div> ),
+  },
   { href: "/ilmu-mahal", text: "Blog (Update!)",
     icon: (
       <div className="relative w-4 h-4">
