@@ -27,7 +27,7 @@ export default async function handler(
   }
 
   try {
-    const response = await fetch("https://fa68-182-253-51-23.ngrok-free.app/rag", {
+    const response = await fetch("https://rag-production-f6c1.up.railway.app/rag", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ query }),
