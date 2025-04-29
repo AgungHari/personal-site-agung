@@ -25,7 +25,7 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "8.0.0-rc21",
     "firebase": "^11.4.0",
-    "formidable": "^3.5.3",
+    "formidable": "^3.5.4",
     "framer-motion": "^10.18.0",
     "locomotive-scroll": "5.0.0-beta.11",
     "lucide-react": "^0.314.0",
