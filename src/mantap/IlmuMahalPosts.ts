@@ -86,7 +86,7 @@ export const ilmuMahalPosts = [
         description:
           "Kumpulan tempat nongkrong buka 24 jam terfavorit di Bali, cocok untuk push rank, belajar ,kerja dll.",
         date: "2024-10-20",
-        category: "Refleksi", 
+        category: "Review", 
         image: "/assets/kopi.webp",
     },      
     {
