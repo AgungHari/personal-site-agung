@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import 'katex/dist/katex.min.css';
+import { InlineMath, BlockMath } from 'react-katex';
 import Image from 'next/image';
 
 
@@ -22,6 +24,7 @@ type PostType = {
   images: string[];
   codes?: string[];
   languages?: string[];
+  formulas?: string[];
 };
 
 type Props = {
@@ -191,6 +194,17 @@ export default function BlogDetail({ post, category }: Props) {
                                         className="object-cover w-full h-full rounded-xl"
                                     />
                                 </motion.div>
+                            )}
+                            
+                            {post.formulas?.[index] && (
+                              <motion.div
+                                className="relative w-full h-20 overflow-hidden rounded-xl"
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: 0.1 * index }}
+                              >
+                                <BlockMath math={post.formulas?.[index] ?? ""} />
+                              </motion.div>
                             )}
 
                             {post.codes?.[index] && (

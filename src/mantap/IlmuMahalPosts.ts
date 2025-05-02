@@ -24,7 +24,7 @@ export const ilmuMahalPosts = [
         "Eksplorasi ringan tentang bagaimana visikom dan machine learning dapat dimanfaatkan untuk memperkirakan jarak hanya dari citra kamera. Sebuah langkah kecil dalam memahami potensi besar dari data visual.",
       date: "2025-03-01",
       category: "Tutorial", 
-      image: "/assets/grid.webp",
+      image: "/assets/cameraman.webp",
   },      
   {
       slug: "ayam-atau-telur", 
