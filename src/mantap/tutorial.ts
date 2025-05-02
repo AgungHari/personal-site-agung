@@ -139,10 +139,7 @@ export const tutorialPosts = [
     date: "2025-04-19",
     description: "Cara mudah membuat dan mengelola virtual environment (venv) di Python untuk memisahkan dependensi proyek secara rapi dan efisien.",
     paragraphs: [
-      "Lorem ipsum dolor sit amet. Et deserunt provident ut consequatur consequuntur qui omnis modi At doloribus veritatis et odit veniam ut autem velit qui blanditiis commodi! Eum cupiditate eius eum nihil maxime et voluptatem quis et aliquid ipsam est quia minima qui quasi quis. Non eveniet molestias et esse architecto ab consequuntur quia aut sunt quia et facere voluptas non galisum facilis! Aut nulla dolores non officia internos qui Quis dicta et omnis totam ea cumque debitis est recusandae sint!",
-      "Qui galisum voluptas et velit dicta ut quisquam quia ut aspernatur error. Et magni natus eos consequatur ipsum aut sunt rerum quo error dicta eum minus officiis. Aut nobis corporis qui atque eaque aut sapiente inventore eos necessitatibus voluptate et autem repellat id dicta optio. Eum quos ipsum sed maxime unde qui ipsa doloremque in quod rerum non rerum quia.",
-      "Et eligendi fugit sit architecto debitis vel iste dolores non asperiores aliquam est fugit velit et porro similique ut accusamus veritatis. Sit magnam necessitatibus aut ullam natus qui illum voluptates eum quia distinctio et suscipit debitis. A voluptatem minus aut ullam ratione qui consequuntur consequuntur sit soluta voluptatem qui deleniti accusantium ut modi tempore.",
-      "Qui enim amet a quasi ullam ab dolor accusamus ut placeat deleniti. Ut ducimus inventore ut Quis autem ut nobis quos quo blanditiis omnis sit animi modi et velit consectetur. Qui quia neque ut quae dolorem et nihil perspiciatis ex mollitia sint a similique dolores aut optio perspiciatis. At earum officiis et officiis neque sed pariatur officiis?",
+      "Virtual Environment (venv) adalah alat yang sangat berguna dalam pengembangan perangkat lunak Python. Dengan menggunakan venv, kita dapat membuat lingkungan terisolasi untuk setiap proyek, sehingga tidak ada konflik antara dependensi proyek yang berbeda. Dalam tutorial ini, kita akan membahas langkah-langkah untuk membuat dan mengelola virtual environment di Python.",
     ],
     images: [
       "/assets/venv.webp",
@@ -174,10 +171,7 @@ export const tutorialPosts = [
     date: "2024-11-01",
     description: "Penjelasan singkat dan padat tentang bagaimana Long Short-Term Memory (LSTM) bekerja. Cocok untuk memahami dasar-dasar arsitektur yang banyak digunakan dalam pemrosesan data berurutan.",
     paragraphs: [
-      "Lorem ipsum dolor sit amet. Et deserunt provident ut consequatur consequuntur qui omnis modi At doloribus veritatis et odit veniam ut autem velit qui blanditiis commodi! Eum cupiditate eius eum nihil maxime et voluptatem quis et aliquid ipsam est quia minima qui quasi quis. Non eveniet molestias et esse architecto ab consequuntur quia aut sunt quia et facere voluptas non galisum facilis! Aut nulla dolores non officia internos qui Quis dicta et omnis totam ea cumque debitis est recusandae sint!",
-      "Qui galisum voluptas et velit dicta ut quisquam quia ut aspernatur error. Et magni natus eos consequatur ipsum aut sunt rerum quo error dicta eum minus officiis. Aut nobis corporis qui atque eaque aut sapiente inventore eos necessitatibus voluptate et autem repellat id dicta optio. Eum quos ipsum sed maxime unde qui ipsa doloremque in quod rerum non rerum quia.",
-      "Et eligendi fugit sit architecto debitis vel iste dolores non asperiores aliquam est fugit velit et porro similique ut accusamus veritatis. Sit magnam necessitatibus aut ullam natus qui illum voluptates eum quia distinctio et suscipit debitis. A voluptatem minus aut ullam ratione qui consequuntur consequuntur sit soluta voluptatem qui deleniti accusantium ut modi tempore.",
-      "Qui enim amet a quasi ullam ab dolor accusamus ut placeat deleniti. Ut ducimus inventore ut Quis autem ut nobis quos quo blanditiis omnis sit animi modi et velit consectetur. Qui quia neque ut quae dolorem et nihil perspiciatis ex mollitia sint a similique dolores aut optio perspiciatis. At earum officiis et officiis neque sed pariatur officiis?",
+      "lstm adalah salah satu arsitektur jaringan syaraf tiruan yang banyak digunakan dalam pemrosesan data berurutan. LSTM dirancang untuk mengatasi masalah vanishing gradient yang sering terjadi pada jaringan syaraf tradisional. Dengan menggunakan sel memori dan gerbang, LSTM dapat menyimpan informasi penting dari input sebelumnya dan mengabaikan informasi yang tidak relevan. Hal ini membuat LSTM sangat efektif dalam tugas-tugas seperti pengenalan suara, penerjemahan bahasa, dan analisis sentimen.",
     ],
     images: [
       "/assets/venv.webp",
@@ -209,10 +203,7 @@ export const tutorialPosts = [
     date: "2024-10-31",
     description: "Perbandingan singkat antara MobileNet dan YOLOv8 dua arsitektur populer di dunia computer vision, dengan tujuan, kekuatan, dan cara kerja yang berbeda.",
     paragraphs: [
-      "Lorem ipsum dolor sit amet. Et deserunt provident ut consequatur consequuntur qui omnis modi At doloribus veritatis et odit veniam ut autem velit qui blanditiis commodi! Eum cupiditate eius eum nihil maxime et voluptatem quis et aliquid ipsam est quia minima qui quasi quis. Non eveniet molestias et esse architecto ab consequuntur quia aut sunt quia et facere voluptas non galisum facilis! Aut nulla dolores non officia internos qui Quis dicta et omnis totam ea cumque debitis est recusandae sint!",
-      "Qui galisum voluptas et velit dicta ut quisquam quia ut aspernatur error. Et magni natus eos consequatur ipsum aut sunt rerum quo error dicta eum minus officiis. Aut nobis corporis qui atque eaque aut sapiente inventore eos necessitatibus voluptate et autem repellat id dicta optio. Eum quos ipsum sed maxime unde qui ipsa doloremque in quod rerum non rerum quia.",
-      "Et eligendi fugit sit architecto debitis vel iste dolores non asperiores aliquam est fugit velit et porro similique ut accusamus veritatis. Sit magnam necessitatibus aut ullam natus qui illum voluptates eum quia distinctio et suscipit debitis. A voluptatem minus aut ullam ratione qui consequuntur consequuntur sit soluta voluptatem qui deleniti accusantium ut modi tempore.",
-      "Qui enim amet a quasi ullam ab dolor accusamus ut placeat deleniti. Ut ducimus inventore ut Quis autem ut nobis quos quo blanditiis omnis sit animi modi et velit consectetur. Qui quia neque ut quae dolorem et nihil perspiciatis ex mollitia sint a similique dolores aut optio perspiciatis. At earum officiis et officiis neque sed pariatur officiis?",
+      "saat ini kita sering mendengar istilah YOLOv8 dan MobileNet dalam dunia computer vision. Keduanya adalah arsitektur yang banyak digunakan untuk berbagai aplikasi seperti deteksi objek, pengenalan wajah, dan segmentasi gambar. Namun, meskipun keduanya memiliki tujuan yang sama, mereka memiliki pendekatan yang berbeda dalam mencapai tujuan tersebut.",
     ],
     images: [
       "/assets/333.webp",
@@ -244,10 +235,7 @@ export const tutorialPosts = [
     date: "2024-10-19",
     description: "Script yang bagus tidak akan berguna tanpa GUI yang bagus juga. Cara mudah buat GUI untuk script roblox dengan chatgpt.",
     paragraphs: [
-      "Lorem ipsum dolor sit amet. Et deserunt provident ut consequatur consequuntur qui omnis modi At doloribus veritatis et odit veniam ut autem velit qui blanditiis commodi! Eum cupiditate eius eum nihil maxime et voluptatem quis et aliquid ipsam est quia minima qui quasi quis. Non eveniet molestias et esse architecto ab consequuntur quia aut sunt quia et facere voluptas non galisum facilis! Aut nulla dolores non officia internos qui Quis dicta et omnis totam ea cumque debitis est recusandae sint!",
-      "Qui galisum voluptas et velit dicta ut quisquam quia ut aspernatur error. Et magni natus eos consequatur ipsum aut sunt rerum quo error dicta eum minus officiis. Aut nobis corporis qui atque eaque aut sapiente inventore eos necessitatibus voluptate et autem repellat id dicta optio. Eum quos ipsum sed maxime unde qui ipsa doloremque in quod rerum non rerum quia.",
-      "Et eligendi fugit sit architecto debitis vel iste dolores non asperiores aliquam est fugit velit et porro similique ut accusamus veritatis. Sit magnam necessitatibus aut ullam natus qui illum voluptates eum quia distinctio et suscipit debitis. A voluptatem minus aut ullam ratione qui consequuntur consequuntur sit soluta voluptatem qui deleniti accusantium ut modi tempore.",
-      "Qui enim amet a quasi ullam ab dolor accusamus ut placeat deleniti. Ut ducimus inventore ut Quis autem ut nobis quos quo blanditiis omnis sit animi modi et velit consectetur. Qui quia neque ut quae dolorem et nihil perspiciatis ex mollitia sint a similique dolores aut optio perspiciatis. At earum officiis et officiis neque sed pariatur officiis?",
+      "Bagi seorang yang suka melakukan exploit pada roblox pasti sudah tidak asing lagi dengan istilah GUI. GUI adalah antarmuka pengguna grafis yang memungkinkan pengguna untuk berinteraksi dengan aplikasi atau perangkat lunak melalui elemen visual seperti tombol, menu, dan jendela. Dalam konteks roblox, GUI digunakan untuk membuat antarmuka yang menarik dan mudah digunakan untuk script yang kita buat.",
     ],
     images: [
       "/assets/blox.webp",
@@ -279,10 +267,7 @@ export const tutorialPosts = [
     date: "2024-10-10",
     description: "Panduan sederhana untuk menyelesaikan Rubik 5x5 tanpa pusing.",
     paragraphs: [
-      "Lorem ipsum dolor sit amet. Et deserunt provident ut consequatur consequuntur qui omnis modi At doloribus veritatis et odit veniam ut autem velit qui blanditiis commodi! Eum cupiditate eius eum nihil maxime et voluptatem quis et aliquid ipsam est quia minima qui quasi quis. Non eveniet molestias et esse architecto ab consequuntur quia aut sunt quia et facere voluptas non galisum facilis! Aut nulla dolores non officia internos qui Quis dicta et omnis totam ea cumque debitis est recusandae sint!",
-      "Qui galisum voluptas et velit dicta ut quisquam quia ut aspernatur error. Et magni natus eos consequatur ipsum aut sunt rerum quo error dicta eum minus officiis. Aut nobis corporis qui atque eaque aut sapiente inventore eos necessitatibus voluptate et autem repellat id dicta optio. Eum quos ipsum sed maxime unde qui ipsa doloremque in quod rerum non rerum quia.",
-      "Et eligendi fugit sit architecto debitis vel iste dolores non asperiores aliquam est fugit velit et porro similique ut accusamus veritatis. Sit magnam necessitatibus aut ullam natus qui illum voluptates eum quia distinctio et suscipit debitis. A voluptatem minus aut ullam ratione qui consequuntur consequuntur sit soluta voluptatem qui deleniti accusantium ut modi tempore.",
-      "Qui enim amet a quasi ullam ab dolor accusamus ut placeat deleniti. Ut ducimus inventore ut Quis autem ut nobis quos quo blanditiis omnis sit animi modi et velit consectetur. Qui quia neque ut quae dolorem et nihil perspiciatis ex mollitia sint a similique dolores aut optio perspiciatis. At earum officiis et officiis neque sed pariatur officiis?",
+      "rubik adalah permainan teka-teki yang sangat populer di seluruh dunia. Salah satu variasi yang paling menantang adalah Rubik 5x5. Dalam tutorial ini, kita akan membahas cara mudah untuk menyelesaikan Rubik 5x5 tanpa pusing. Kita akan menggunakan metode layer by layer yang sederhana dan mudah dipahami.",
     ],
     images: [
       "/assets/rubik.webp",
