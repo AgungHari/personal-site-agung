@@ -5,12 +5,27 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import type { GetStaticProps } from "next";
 import Image from "next/image"; 
+import { useState } from 'react';
+import { Search } from "lucide-react";
 
 type Props = {
   posts: typeof ilmuMahalPosts;
 };
 
 export default function IlmuMahalPage({ posts }: Props) {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const filteredPosts = posts.filter((post) =>
+    post.title.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      setSearchQuery(event.currentTarget.value);
+    }
+  } 
+
   return (
     <Container title="Blog">
       <Gradient />
@@ -25,7 +40,7 @@ export default function IlmuMahalPage({ posts }: Props) {
         </motion.h1>
 
         <motion.p
-          className="text-muted-foreground text-center max-w-2xl mx-auto text-base mb-14"
+          className="text-muted-foreground text-center max-w-2xl mx-auto text-base mb-4"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -33,8 +48,24 @@ export default function IlmuMahalPage({ posts }: Props) {
           A personal repository of thoughts and life lessons, written to document the mental checkpoints of my growth. Each entry marks a version of who I was and who I&apos;m becoming.
         </motion.p>
 
+        <div className="flex items-center gap-4 mb-5 mx-auto max-w-md">
+        <motion.input
+            type="text"
+            placeholder="Search posts..."
+            className="flex-1 p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary bg-background text-foreground placeholder-muted shadow-sm hover:shadow-md transition-shadow duration-300"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={handleKeyDown}
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+        />
+
+        </div>
+
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-stretch">
-          {posts.map((post, index : number) => (
+          {filteredPosts.map((post, index: number) => (
             <Link href={`/ilmu-mahal/${post.slug}`} key={post.slug} passHref>
               <motion.article
                 className="relative overflow-hidden h-full min-h-[250px] flex flex-col justify-between group rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md text-card-foreground shadow-xl p-6 transition-all hover:scale-[1.015] hover:shadow-lg hover:border-white/20 hover:bg-white/10 cursor-pointer"
