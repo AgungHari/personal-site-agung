@@ -631,7 +631,7 @@ export default function Home() {
                     alt={service.service}
                     width={60}
                     height={60}
-                    className="my-6 rounded-full"
+                    className="my-6 rounded-full object-cover aspect-square"
                   />
                   <span className="text-lg tracking-tight text-foreground">
                     {service.service}

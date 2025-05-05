@@ -1,14 +1,21 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function AdSlot() {
+  const [show, setShow] = useState(false);
+
   useEffect(() => {
+    // Pastikan hanya jalan di client
+    setShow(true);
+
     try {
-        window.adsbygoogle = window.adsbygoogle || [];
-        window.adsbygoogle.push({});
+      window.adsbygoogle = window.adsbygoogle || [];
+      window.adsbygoogle.push({});
     } catch (e) {
       console.error("AdSense error", e);
     }
   }, []);
+
+  if (!show) return null;
 
   return (
     <div className="my-8 w-full">

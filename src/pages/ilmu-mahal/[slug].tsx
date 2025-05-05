@@ -1,4 +1,5 @@
 import { ilmuMahalPosts } from "@/mantap/IlmuMahalPosts";
+import { useRouter } from "next/router";
 import { refleksiPosts } from "@/mantap/refleksi";
 import { tutorialPosts } from "@/mantap/tutorial";
 import { reviewPosts } from "@/mantap/review";
@@ -39,7 +40,19 @@ type Props = {
 };
 
 export default function BlogDetail({ post, category }: Props) {
-  
+  const router = useRouter();
+
+    if (router.isFallback) {
+      return (
+        <Container title="Loading...">
+          <div className="py-24 text-center">
+            <h1 className="text-3xl font-bold mb-4">Loading...</h1>
+            <p className="text-muted-foreground">Please wait while the content is loading.</p>
+          </div>
+        </Container>
+      );
+    }
+
     if (!post) {
       return (
         <Container title="Post Not Found">
@@ -84,7 +97,7 @@ export default function BlogDetail({ post, category }: Props) {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <Image src={post.images[0] ?? ""} alt="Gambar Utama" fill className="object-cover w-full h-full" />
+                    <Image src={post.images[0] ?? ""} alt="Gambar Utama" fill sizes="100vw" className="object-cover w-full h-full" />
                 </motion.div>
                 )}
 
@@ -121,6 +134,7 @@ export default function BlogDetail({ post, category }: Props) {
                                 src={post.images[index + 1] ?? ""}
                                 alt={`Gambar ${index + 2}`}
                                 fill
+                                sizes="100vw"
                                 className="object-cover w-full h-full rounded-xl"
                             />
                         </motion.div>
@@ -161,6 +175,7 @@ export default function BlogDetail({ post, category }: Props) {
                                 src={post.images[index + 1] ?? ""}
                                 alt={`Gambar ${index + 2}`}
                                 fill
+                                sizes="100vw"
                                 className="object-cover w-full h-full rounded-xl"
                             />
                         </motion.div>
@@ -202,6 +217,7 @@ export default function BlogDetail({ post, category }: Props) {
                                         src={post.images[index + 1] ?? ""}
                                         alt={`Gambar ${index + 2}`}
                                         fill
+                                        sizes="100vw"
                                         className="object-cover w-full h-full rounded-xl"
                                     />
                                 </motion.div>
