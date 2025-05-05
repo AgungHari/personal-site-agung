@@ -1,5 +1,6 @@
 import { ilmuMahalPosts } from "@/mantap/IlmuMahalPosts";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { refleksiPosts } from "@/mantap/refleksi";
 import { tutorialPosts } from "@/mantap/tutorial";
 import { reviewPosts } from "@/mantap/review";
@@ -41,6 +42,22 @@ type Props = {
 
 export default function BlogDetail({ post, category }: Props) {
   const router = useRouter();
+  
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      console.log(`%c
+   ██████╗ ███████╗███╗   ███╗███████╗████████╗███████╗██████╗ ██╗
+  ██╔════╝ ██╔════╝████╗ ████║██╔════╝╚══██╔══╝██╔════╝██╔══██╗██║
+  ██║  ███╗█████╗  ██╔████╔██║█████╗     ██║   █████╗  ██████╔╝██║
+  ██║   ██║██╔══╝  ██║╚██╔╝██║██╔══╝     ██║   ██╔══╝  ██╔══██╗╚═╝
+  ╚██████╔╝███████╗██║ ╚═╝ ██║███████╗   ██║   ███████╗██║  ██║██╗
+   ╚═════╝ ╚══════╝╚═╝     ╚═╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝
+  `, "color: #00000; font-weight: bold; font-family: monospace;");
+  
+      console.log("%cWelcome to the console of agungg.com, im Gemeterrr 🥶", "color: #ff0000; font-weight: bold;");
+      console.log("%cCheck out the repo: https://github.com/AgungHari", "color: #3b82f6;");
+    }
+  }, []);
 
     if (router.isFallback) {
       return (
