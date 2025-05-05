@@ -11,7 +11,7 @@ import type { GetStaticPaths, GetStaticProps } from 'next';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import 'katex/dist/katex.min.css';
-import { InlineMath, BlockMath } from 'react-katex';
+import { BlockMath } from 'react-katex';
 import Image from 'next/image';
 import AdSlot from "@/components/AdSlot";
 import dynamic from "next/dynamic";

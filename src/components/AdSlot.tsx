@@ -1,31 +1,41 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function AdSlot() {
   const [show, setShow] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     setShow(true);
   }, []);
 
   useEffect(() => {
-    if (!show) return;
+    if (!show || !containerRef.current) return;
 
-    const adEl = document.querySelector(".adsbygoogle");
-    const isAlreadyLoaded = adEl?.getAttribute("data-adsbygoogle-status") === "done";
+    const tryLoadAd = () => {
+      const adEl = containerRef.current?.querySelector(".adsbygoogle") as HTMLElement | null;
+      const isAlreadyLoaded = adEl?.getAttribute("data-adsbygoogle-status") === "done";
 
-    if (!isAlreadyLoaded) {
-      try {
-        (window.adsbygoogle = window.adsbygoogle || []).push({});
-      } catch (e) {
-        console.error("AdSense error", e);
+      if (!adEl || adEl.offsetWidth === 0) {
+        setTimeout(tryLoadAd, 200); //mantap
+        return;
       }
-    }
+
+      if (!isAlreadyLoaded) {
+        try {
+          (window.adsbygoogle = window.adsbygoogle || []).push({});
+        } catch (e) {
+          console.error("AdSense error", e);
+        }
+      }
+    };
+
+    tryLoadAd();
   }, [show]);
 
   if (!show) return null;
 
   return (
-    <div className="my-8 w-full">
+    <div ref={containerRef} className="my-8 w-full">
       <ins
         className="adsbygoogle"
         style={{ display: "block", textAlign: "center" }}
