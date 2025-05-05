@@ -11,6 +11,12 @@ import { oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import 'katex/dist/katex.min.css';
 import { InlineMath, BlockMath } from 'react-katex';
 import Image from 'next/image';
+import AdSlot from "@/components/AdSlot";
+import dynamic from "next/dynamic";
+
+
+const LeftAd = dynamic(() => import("@/components/LeftAds"), { ssr: false });
+
 
 
 const safeOneDark = oneDark as Record<string, unknown>;
@@ -46,6 +52,8 @@ export default function BlogDetail({ post, category }: Props) {
     }
   
     return (
+      <>
+        <LeftAd />
         <Container title={post.title}>
             <Gradient />
                 <section className="relative z-10 px-6 py-24 max-w-4xl mx-auto">
@@ -100,7 +108,8 @@ export default function BlogDetail({ post, category }: Props) {
                         >
                             
                         </motion.p>
-
+                        {index === Math.floor(post.paragraphs.length / 2) && <AdSlot />}
+                        
                     {post.images[index + 1] && (
                         <motion.div
                             className="relative w-full h-64 overflow-hidden rounded-xl"
@@ -139,6 +148,7 @@ export default function BlogDetail({ post, category }: Props) {
                             }}
                         >
                         </motion.p>
+                        {index === Math.floor(post.paragraphs.length / 2) && <AdSlot />}
 
                     {post.images[index + 1] && (
                         <motion.div
@@ -179,6 +189,7 @@ export default function BlogDetail({ post, category }: Props) {
                                 }}
                             >
                             </motion.p>
+                            {index === Math.floor(post.paragraphs.length / 2) && <AdSlot />}
 
                             {post.images[index + 1] && (
                                 <motion.div
@@ -244,7 +255,7 @@ export default function BlogDetail({ post, category }: Props) {
                 </div>)}
             </section>
         </Container>
-
+      </>
     );
   }
   

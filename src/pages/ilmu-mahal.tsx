@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import type { GetStaticProps } from "next";
 import Image from "next/image"; 
 import { useState } from 'react';
-import { Search } from "lucide-react";
+
 
 type Props = {
   posts: typeof ilmuMahalPosts;
