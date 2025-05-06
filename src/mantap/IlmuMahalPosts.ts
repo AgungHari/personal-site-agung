@@ -46,12 +46,12 @@ export const ilmuMahalPosts = [
   },
   {
     slug: "Venv",
-    title: "Panduan Lengkap Setup venv di Python",
+    title: "Panduan Lengkap Setup venv",
     description:
       "Cara mudah membuat dan mengelola virtual environment (venv) di Python untuk memisahkan dependensi proyek secara rapi dan efisien.",
     date: "2024-12-25",
     category: "Tutorial",
-    image: "/assets/venv.webp",
+    image: "/assets/googledeepmind.webp",
   },
   {
     slug: "Mengapa-Tidak-Semua-Orang-Paham-Kita",
@@ -69,7 +69,7 @@ export const ilmuMahalPosts = [
         "Penjelasan singkat dan padat tentang bagaimana Long Short-Term Memory (LSTM) bekerja. Cocok untuk memahami dasar-dasar arsitektur yang banyak digunakan dalam pemrosesan data berurutan.",
       date: "2024-11-01",
       category: "Tutorial", 
-      image: "/assets/lstm.webp",
+      image: "/assets/ship.webp",
   },
   {
       slug: "mobilenet-vs-yolov8", 
@@ -87,7 +87,7 @@ export const ilmuMahalPosts = [
         "Kumpulan tempat nongkrong buka 24 jam terfavorit di Bali, cocok untuk push rank, belajar ,kerja dll.",
       date: "2024-10-20",
       category: "Review", 
-      image: "/assets/kopi.webp",
+      image: "/assets/bali.webp",
   },      
   {
       slug: "gui-roblox-script-gacor", 
@@ -105,7 +105,7 @@ export const ilmuMahalPosts = [
         "OLED mahal Mini LED solusinya.",
       date: "2024-10-10",
       category: "Refleksi", 
-      image: "/assets/miniled.webp",
+      image: "/assets/oled.webp",
   },    
   {
       slug: "cara-mudah-rubik-5x5", 
