@@ -38,7 +38,7 @@ export default function LeftAd() {
   return (
     <div
       ref={containerRef}
-      className="hidden lg:block fixed left-4 top-40 z-50 w-[160px] h-[600px]"
+      className="invisible lg:visible fixed left-4 top-40 z-50 w-[160px] h-[600px]"
     >
       <ins
         className="adsbygoogle"
