@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { setNonPersonalizedAds } from "@/lib/setNonPersonalizedAds";
 
 export default function LeftAd() {
   const [show, setShow] = useState(false);
@@ -23,6 +24,7 @@ export default function LeftAd() {
 
       if (!isAlreadyLoaded) {
         try {
+          setNonPersonalizedAds();
           (window.adsbygoogle = window.adsbygoogle || []).push({});
         } catch (e) {
           console.error("AdSense vertical error", e);

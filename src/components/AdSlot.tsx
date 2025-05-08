@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { setNonPersonalizedAds } from "@/lib/setNonPersonalizedAds";
 
 export default function AdSlot() {
   const [show, setShow] = useState(false);
@@ -22,6 +23,7 @@ export default function AdSlot() {
 
       if (!isAlreadyLoaded) {
         try {
+          setNonPersonalizedAds();
           (window.adsbygoogle = window.adsbygoogle || []).push({});
         } catch (e) {
           console.error("AdSense error", e);
