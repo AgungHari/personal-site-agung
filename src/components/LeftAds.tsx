@@ -3,26 +3,22 @@ import { setNonPersonalizedAds } from "@/lib/setNonPersonalizedAds";
 
 export default function LeftAd() {
   const [show, setShow] = useState(false);
-  const [isDesktop, setIsDesktop] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    
-    if (typeof window !== "undefined") {
-      setShow(true);
-      setIsDesktop(window.innerWidth >= 1024);
-    }
+    setShow(true);
   }, []);
 
   useEffect(() => {
-    if (!show || !isDesktop || !containerRef.current) return;
+    if (!show || !containerRef.current) return;
 
     const tryLoadAd = () => {
       const adEl = containerRef.current?.querySelector(".adsbygoogle") as HTMLElement | null;
+
       const isAlreadyLoaded = adEl?.getAttribute("data-adsbygoogle-status") === "done";
 
       if (!adEl || adEl.offsetWidth === 0) {
-        setTimeout(tryLoadAd, 200); // mantap
+        setTimeout(tryLoadAd, 200); //mantap
         return;
       }
 
@@ -37,9 +33,9 @@ export default function LeftAd() {
     };
 
     tryLoadAd();
-  }, [show, isDesktop]);
+  }, [show]);
 
-  if (!show || !isDesktop) return null;
+  if (!show) return null;
 
   return (
     <div
