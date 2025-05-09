@@ -22,10 +22,10 @@ importers:
         version: 1.2.0(@types/react@18.3.20)(react@18.2.0)
       '@splinetool/react-spline':
         specifier: ^2.2.6
-        version: 2.2.6(@splinetool/runtime@1.9.82)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        version: 2.2.6(@splinetool/runtime@1.9.92)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       '@splinetool/runtime':
-        specifier: ^1.9.82
-        version: 1.9.82
+        specifier: ^1.9.92
+        version: 1.9.92
       '@t3-oss/env-nextjs':
         specifier: ^0.7.3
         version: 0.7.3(typescript@5.8.3)(zod@3.24.3)
@@ -1505,8 +1505,8 @@ packages:
       react: '>=17.0.0'
       react-dom: '>=17.0.0'
 
-  '@splinetool/runtime@1.9.82':
-    resolution: {integrity: sha512-qfNTnezSGuh7nPUPgRVfpH+g2FYywvYmHzOLmp8dahMxuY7HshOwLEhKVapaaWxIpq4h/WweU83pBWb48bwA8A==}
+  '@splinetool/runtime@1.9.92':
+    resolution: {integrity: sha512-lzVMDQh+cWzitNvXID3lUCwZ6aMh+G+sNGLQorljXv9WzU+jEMuuRulTe/sXFnJBOBzyfIfq0QoiCbyuVSIOvQ==}
 
   '@studio-freight/lenis@1.0.29':
     resolution: {integrity: sha512-z/qS8ato5m2wlxQREYj5iALcxMrhhm06vEiLqYzLI+3HmpPzPscmJ8cXNiay4bj692vOot2hyTA3WP++AQVoKA==}
@@ -2633,6 +2633,7 @@ packages:
 
   formidable@3.5.3:
     resolution: {integrity: sha512-pQEHGLZjLRyfLCe6r6n8IQGqHEceKfYR5tIf/iUDn5SabaitfVR/pIskxnyvSSl122J63rFY17i68hrfK0BVOA==}
+    deprecated: 'ATTENTION: please upgrade to latest of v3 (v3.5.4), should be working on Node v14, v16, v18 and recent lts'
 
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
@@ -5855,15 +5856,15 @@ snapshots:
 
   '@rushstack/eslint-patch@1.11.0': {}
 
-  '@splinetool/react-spline@2.2.6(@splinetool/runtime@1.9.82)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
+  '@splinetool/react-spline@2.2.6(@splinetool/runtime@1.9.92)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)':
     dependencies:
-      '@splinetool/runtime': 1.9.82
+      '@splinetool/runtime': 1.9.92
       lodash.debounce: 4.0.8
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       react-merge-refs: 2.1.1
 
-  '@splinetool/runtime@1.9.82':
+  '@splinetool/runtime@1.9.92':
     dependencies:
       on-change: 4.0.2
       semver-compare: 1.0.0
