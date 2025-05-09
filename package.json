@@ -24,7 +24,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "8.0.0-rc21",
-    "firebase": "^11.4.0",
+    "firebase": "^11.7.1",
     "formidable": "^3.5.3",
     "framer-motion": "^10.18.0",
     "katex": "^0.16.22",
