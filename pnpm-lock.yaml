@@ -87,8 +87,8 @@ importers:
         specifier: ^2.0.10
         version: 2.0.10(react@18.2.0)
       react-katex:
-        specifier: ^3.0.1
-        version: 3.0.1(prop-types@15.8.1)(react@18.2.0)
+        specifier: ^3.1.0
+        version: 3.1.0(prop-types@15.8.1)(react@18.2.0)
       react-syntax-highlighter:
         specifier: ^15.6.1
         version: 15.6.1(react@18.2.0)
@@ -2633,6 +2633,7 @@ packages:
 
   formidable@3.5.3:
     resolution: {integrity: sha512-pQEHGLZjLRyfLCe6r6n8IQGqHEceKfYR5tIf/iUDn5SabaitfVR/pIskxnyvSSl122J63rFY17i68hrfK0BVOA==}
+    deprecated: 'ATTENTION: please upgrade to latest of v3 (v3.5.4), should be working on Node v14, v16, v18 and recent lts'
 
   fraction.js@4.3.7:
     resolution: {integrity: sha512-ZsDfxO51wGAXREY55a7la9LScWpwv9RxIrYABrlvOFBlH/ShPnrtsXeuUIfXKKOVicNxQ+o8JTbJvjS4M89yew==}
@@ -3618,11 +3619,11 @@ packages:
   react-is@16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
 
-  react-katex@3.0.1:
-    resolution: {integrity: sha512-wIUW1fU5dHlkKvq4POfDkHruQsYp3fM8xNb/jnc8dnQ+nNCnaj0sx5pw7E6UyuEdLRyFKK0HZjmXBo+AtXXy0A==}
+  react-katex@3.1.0:
+    resolution: {integrity: sha512-At9uLOkC75gwn2N+ZXc5HD8TlATsB+3Hkp9OGs6uA8tM3dwZ3Wljn74Bk3JyHFPgSnesY/EMrIAB1WJwqZqejA==}
     peerDependencies:
       prop-types: ^15.8.1
-      react: '>=15.3.2 <=18'
+      react: '>=15.3.2 <20'
 
   react-merge-refs@2.1.1:
     resolution: {integrity: sha512-jLQXJ/URln51zskhgppGJ2ub7b2WFKGq3cl3NYKtlHoTG+dN2q7EzWrn3hN3EgPsTMvpR9tpq5ijdp7YwFZkag==}
@@ -8203,7 +8204,7 @@ snapshots:
 
   react-is@16.13.1: {}
 
-  react-katex@3.0.1(prop-types@15.8.1)(react@18.2.0):
+  react-katex@3.1.0(prop-types@15.8.1)(react@18.2.0):
     dependencies:
       katex: 0.16.22
       prop-types: 15.8.1
